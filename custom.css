@@ -207,7 +207,6 @@ body {
   transform: rotate(90deg);
 }
 
-/* --- Side navigation panel --- */
 .navmenu {
   position: fixed;
   top: 0;
@@ -222,7 +221,6 @@ body {
   border-left: 3px solid var(--accent-color);
 }
 
-/* --- Menu list --- */
 .navmenu ul {
   list-style: none;
   padding: 40px 0;
@@ -305,4 +303,111 @@ body {
 .mobile-nav-active .navmenu ul li {
   animation: fadeIn 0.4s ease forwards;
 
+}
+
+.custom {
+  counter-reset: section; 
+  list-style: none;
+  padding-left: 0;
+}
+
+.custom > li {
+  counter-increment: section;
+  margin: 8px 0;
+  position: relative;
+}
+
+.custom > li::before {
+  content: counters(section, ".") ". ";
+  color: #df1a13;
+  font-weight: bold;
+  position: absolute;
+  left: -2em;
+}
+
+.custom ol {
+  counter-reset: subsection;
+  list-style: none;
+  margin-left: 2em;
+  padding-left: 0;
+}
+
+.custom ol li {
+  counter-increment: subsection;
+}
+
+.custom ol li::before {
+  content: counters(section, ".") "." counter(subsection) " ";
+  color: #eb4444;
+  font-weight: bold;
+}
+
+.custom-ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.custom li {
+  position: relative;
+  padding-left: 1.5em;
+  margin: 6px 0;
+}
+
+.custom li::before {
+  content: "✦";
+  color: #ff6600;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #fafafa;
+  color: #333;
+  margin: 40px;
+}
+
+.service {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+  margin-top: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.services thread{
+  background-color: #0077cc;
+  color: white;
+  text-transform: uppercase;
+}
+
+.services th {
+  padding: 12px;
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+
+.services td{
+  padding: 12px;
+  vertical-align: middle;
+}
+
+.services tbody tr:nth-child(odd) {
+  background-color: #f2f8fc;
+}
+
+.services tbody tr:nth-child(even) {
+  background-color: #ffffff;
+}
+
+.services tbody tr:hover {
+  background-color: #dff0ff;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+.services th,
+.services td {
+  border: 1px solid #ccc;
 }
